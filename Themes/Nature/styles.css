@@ -1,0 +1,39 @@
+/*
+ * Nature theme
+ */
+QFrame {
+  background-color: #202222;
+  /*border-radius: 20px;*/
+}
+
+QPushButton {
+  border-radius: 10px;
+  border: none;
+  background-color: #0F1212;
+  color: #B2BEBC;
+}
+
+QPushButton[selected="true"] {
+  border: 2px solid #607767;
+}
+
+QMenu {
+  background-color: #202222;
+  color: #B2BEBC;
+  border: 1px solid #607767;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+QMenu::item {
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: #B2BEBC;
+}
+
+QMenu::item:selected {
+  background-color: #D0DAF0;
+  color: #0F1212;
+}

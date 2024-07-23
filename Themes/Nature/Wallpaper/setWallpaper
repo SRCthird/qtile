@@ -1,0 +1,3 @@
+#!/bin/bash
+wal -i ~/.config/qtile/Wallpaper/claudio-testa-FrlCwXwbwkk-unsplash.jpg
+export FRIGIDTILE_THEME="nature"

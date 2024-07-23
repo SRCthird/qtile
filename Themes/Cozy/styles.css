@@ -1,0 +1,40 @@
+/*
+* Cozy Theme
+*/
+QFrame {
+    background-color: #282738;
+    /*border-radius: 20px;*/
+}
+
+QPushButton {
+    border-radius: 10px;
+    border: none;
+    background-color: #353446;
+    color: #91B1F0;
+}
+
+QPushButton[selected="true"] {
+    border: 2px solid #CAA9E0;
+}
+
+QMenu {
+    background-color: #353446;
+    color: #91B1F0;
+    border: 1px solid #CAA9E0; 
+    border-radius: 10px;
+    padding: 5px;
+}
+
+QMenu::item {
+    background-color: transparent;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: #91B1F0; 
+}
+
+QMenu::item:selected {
+    background-color: #4B427E;
+    color: #91B1F0; 
+}
+

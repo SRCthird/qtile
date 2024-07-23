@@ -1,0 +1,3 @@
+#!/bin/bash
+wal -b 232A2E -i ~/.config/qtile/Wallpaper/fog_forest_2.png
+export FRIGIDTILE_THEME="everforest"

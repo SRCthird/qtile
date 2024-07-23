@@ -1,0 +1,4 @@
+#!/bin/bash
+wal -b 282738 -i ~/.config/qtile/Wallpaper/Aesthetic2.png
+export FRIGIDTILE_THEME="cozy"
+

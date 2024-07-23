@@ -1,0 +1,44 @@
+#!/bin/bash
+options=("󱄖 Cozy" "󰞇 Sakura" "󰌪 Natura" "󱢗 Everforest")
+selected=$(printf '%s\n' "${options[@]}" | rofi -dmenu -l 4 -i -mesg "T H E M E S")
+
+function setVar {
+  CONFIG_FILE="$HOME/.config/environment.d/frigidtile.conf"
+  THEME_VAR="FRIGIDTILE_THEME"
+
+  if [ ! -f "$CONFIG_FILE" ]; then
+      mkdir -p "$(dirname "$CONFIG_FILE")"
+      touch "$CONFIG_FILE"
+  fi
+
+  if grep -q "^${THEME_VAR}=" "$CONFIG_FILE"; then
+      sed -i "s/^${THEME_VAR}=.*/${THEME_VAR}=${1}/" "$CONFIG_FILE"
+  else
+      echo "${THEME_VAR}=${1}" >> "$CONFIG_FILE"
+  fi
+}
+
+function setTheme {
+  cp -r ~/.config/qtile/Themes/$1/. ~/.config/qtile/. &&
+  wal -b 282738 -i ~/.config/qtile/Wallpaper/$2 &&
+  (cd  ~/.config/qtile && python -m qtile_dock.cli restart) &&
+  setVar $1 &&
+  qtile cmd-obj -o cmd -f restart 
+}
+
+case $selected in
+  "󱄖 Cozy")
+    setTheme Cozy Aesthetic2.png
+    ;;
+  "󰞇 Sakura")
+    setTheme Sakura 120_-_KnFPX73.jpg
+    ;;
+  "󰌪 Natura")
+    setTheme Nature claudio-testa-FrlCwXwbwkk-unsplash.jpg
+    ;;
+  "󱢗 Everforest")
+    setTheme Everforest fog_forest_2.png
+    ;;
+  *)
+    ;;
+esac

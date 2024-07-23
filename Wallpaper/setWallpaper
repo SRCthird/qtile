@@ -1,0 +1,3 @@
+#!/bin/bash
+wal -b 282738 -i ~/.config/qtile/Wallpaper/120_-_KnFPX73.jpg
+export FRIGIDTILE_THEME="sakura"
